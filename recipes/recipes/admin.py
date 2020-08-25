@@ -6,8 +6,8 @@ from .models import Recipe, Ingredient, Instruction
 # Register models:
 # https://docs.djangoproject.com/en/3.0/ref/contrib/admin/#django.contrib.admin.StackedInline
 # https://stackoverflow.com/questions/4890981/django-admin-stackedinline-customisation
-# class RecipeInline(admin.StackedInline):
-#     model = Recipe
+# class IngredientInline(admin.StackedInline):
+#     model = Ingredient
 
 
 class IngredientInline(admin.TabularInline):
