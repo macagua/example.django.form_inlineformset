@@ -1,0 +1,20 @@
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% trans 'Recipes Example' %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js" integrity="sha512-Znnj7n0C0Xz1tdk6ih39WPm3kSCTZEKnX/7WaNbySW7GFbwSjO5r9/uOAGLMbgv6llI1GdghC7xdaQsFUStM1w==" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.js" integrity="sha512-7iAtgxibPdpUUYLwHYiQz2lRpEsz/5VXHI9DF40oxSUoiwbiOL+maCUI2dZdYm/yBQgkTe+aXhBApuPtpnAu3w==" crossorigin="anonymous"></script> -->
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.map -->
+</head>
+<body>
+
+    {% block content %}
+    {% endblock %}
+
+{% block extrajs %}
+{% endblock extrajs %}
+</body>
+</html>

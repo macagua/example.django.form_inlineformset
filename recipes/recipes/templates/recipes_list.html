@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block content %}
+<h1>{% trans 'Recipes' %}</h1>
+
+<ol>
+    {% for recipe in recipes %}
+        <li>
+            <a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a>
+        </li>
+    {% endfor %}
+</ol>
+
+<!-- <a href="{#% url 'recipes-register' %#}">{% trans 'Register recipe' %}</a> -->
+<a href="/recipes/register/">{% trans 'Register recipe' %}</a>
+{% endblock content %}
