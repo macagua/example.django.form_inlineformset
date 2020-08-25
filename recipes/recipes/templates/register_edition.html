@@ -26,9 +26,12 @@
         <ul id='formset-ingredients'>
             {% for form in ingredientFormset %}
                 {{ form.id }}
-                <li>
                     {{ form.as_ul }}
+                <!--
+                <li>
+                    {#{ form.as_ul }#}
                 </li>
+                -->
             {% endfor %}
         </ul>
 
@@ -40,9 +43,12 @@
         <ul id='formset-instructions'>
             {% for form in instructionFormset %}
                 {{ form.id }}
-                <li>
                     {{ form.as_ul }}
+                <!--
+                <li>
+                    {#{ form.as_ul }#}
                 </li>
+                -->
             {% endfor %}
         </ul>
 

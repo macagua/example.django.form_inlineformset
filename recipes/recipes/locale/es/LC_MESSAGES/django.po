@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-25 03:21-0400\n"
-"PO-Revision-Date: 2020-08-25 02:22-0400\n"
+"POT-Creation-Date: 2020-08-25 16:23-0400\n"
+"PO-Revision-Date: 2020-08-25 16:24-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -17,31 +17,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Virtaal 0.7.1\n"
 
-#: models.py:19
-msgid "Recipe"
-msgstr "Receta"
-
-#: models.py:20 templates/recipes_list.html:5 templates/register_edition.html:5
+#: apps.py:9 models.py:21 templates/recipes_list.html:5
+#: templates/register_edition.html:5
 msgid "Recipes"
 msgstr "Recetas"
 
-#: models.py:31
+#: models.py:7
+msgid "Title"
+msgstr "Título"
+
+#: models.py:8 models.py:26 models.py:39
+msgid "Description"
+msgstr "Descripción"
+
+#: models.py:20 models.py:25 models.py:37
+msgid "Recipe"
+msgstr "Receta"
+
+#: models.py:32
 msgid "Ingredient"
 msgstr "Ingrediente"
 
-#: models.py:32 templates/register_edition.html:25
+#: models.py:33 templates/register_edition.html:25
 msgid "Ingredients"
 msgstr "Ingredientes"
 
-#: models.py:37
+#: models.py:38
+msgid "Number"
+msgstr "Número"
+
+#: models.py:38
 msgid "Step number"
 msgstr "Número de paso"
 
-#: models.py:44
+#: models.py:42
+#, python-brace-format
+msgid "Step {number}: {description}"
+msgstr "Paso {number}: {description}"
+
+#: models.py:45
 msgid "Instruction"
 msgstr "Instrucción"
 
-#: models.py:45 templates/register_edition.html:39
+#: models.py:46 templates/register_edition.html:39
 msgid "Instructions"
 msgstr "Instrucciones"
 
@@ -67,4 +85,4 @@ msgstr "Enviar"
 
 #: templates/register_edition.html:55 templates/register_edition.html.py:56
 msgid "Recipes list"
-msgstr "Lista de Recetas"
+msgstr "Lista de recetas"
