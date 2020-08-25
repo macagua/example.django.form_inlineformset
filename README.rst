@@ -2,7 +2,8 @@
 example.django.form_inlineformset
 =================================
 
-A Django Form + InlineFormSet examples
+Example for Django using Form + InlineFormSet and inlineFormSet.
+
 
 
 References
