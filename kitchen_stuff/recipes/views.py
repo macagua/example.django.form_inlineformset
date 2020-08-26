@@ -44,8 +44,7 @@ def recipes_register_edition(request, recipe_id=None):
             form.save()
             ingredientFormset.save()
             instructionFormset.save()
-            #return redirect('recipes-list')
-            return redirect('/')
+            return redirect('recipes:list')
     else:
         form = RecipeForm(instance=recipe)
         ingredientFormset = IngredientFormSet(instance=recipe)

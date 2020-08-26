@@ -12,6 +12,5 @@
     {% endfor %}
 </ol>
 
-<!-- <a href="{#% url 'recipes-register' %#}">{% trans 'Register recipe' %}</a> -->
-<a href="/recipes/register/">{% trans 'Register recipe' %}</a>
+<a href="{% url 'recipes:register' %}">{% trans 'Register recipe' %}</a>
 {% endblock content %}

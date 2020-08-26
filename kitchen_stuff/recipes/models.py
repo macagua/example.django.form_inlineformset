@@ -8,7 +8,8 @@ class Recipe(models.Model):
     description = models.TextField(_('Description'), )
 
     def get_absolute_url(self):
-        return '/recipes/{}/'.format(self.id)
+        from django.core.urlresolvers import reverse
+        return reverse('recipes:edit', kwargs={'recipe_id': self.id})
 
     def __str__(self):
         return self.title
