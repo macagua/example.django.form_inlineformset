@@ -20,9 +20,9 @@ Features
 Requirements
 ============
 
-* Python 2.7.
+* Python 3.7.
 
-* Django 1.8.
+* Django 2.1.11.
 
 
 Installation
@@ -33,15 +33,16 @@ install it, please, execute the following command:
 
 ::
 
-    pip install -r requirements.txt --timeout 120
+    pip3 install -r requirements.txt --timeout 120
 
 
 Create the database, please, execute the following command:
 
 ::
 
-    python manage.py makemigrations
-    python manage.py migrate
+    cd kitchen_stuff
+    python3 manage.py makemigrations
+    python3 manage.py migrate
 
 
 Settings
@@ -54,7 +55,7 @@ and manage the admin interface, run the following command:
 
 ::
 
-    python manage.py createsuperuser --username admin --email admin@mail.com
+    python3 manage.py createsuperuser --username admin --email admin@mail.com
 
 
 Run
@@ -75,7 +76,7 @@ Also you can see Django admin interface, use username **admin** and password **a
 References
 ==========
 
-- `Django 1.8 Project tutorial <https://docs.djangoproject.com/en/1.8/intro/>`_.
+- `Django 2.1 Project tutorial <https://docs.djangoproject.com/en/2.1/intro/>`_.
 
 - `Django: Ejemplo de Form + InlineFormset <https://alexanderae.com/django-form-inlineformset.html>`_.
 

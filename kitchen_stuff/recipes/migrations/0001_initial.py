@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.db import migrations, models
+import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
@@ -48,11 +46,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='instruction',
             name='recipe',
-            field=models.ForeignKey(to='recipes.Recipe'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recipes.Recipe'),
         ),
         migrations.AddField(
             model_name='ingredient',
             name='recipe',
-            field=models.ForeignKey(to='recipes.Recipe'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recipes.Recipe'),
         ),
     ]

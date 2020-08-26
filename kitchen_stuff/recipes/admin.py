@@ -1,13 +1,5 @@
-# -*- coding: utf-8 -*-
 from django.contrib import admin
 from .models import Recipe, Ingredient, Instruction
-
-
-# Register models:
-# https://docs.djangoproject.com/en/3.0/ref/contrib/admin/#django.contrib.admin.StackedInline
-# https://stackoverflow.com/questions/4890981/django-admin-stackedinline-customisation
-# class IngredientInline(admin.StackedInline):
-#     model = Ingredient
 
 
 class IngredientInline(admin.TabularInline):
@@ -26,5 +18,3 @@ class RecipeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Recipe, RecipeAdmin)
-# admin.site.register(Ingredient)
-# admin.site.register(Instruction)

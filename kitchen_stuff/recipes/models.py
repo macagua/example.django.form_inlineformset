@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -8,7 +7,8 @@ class Recipe(models.Model):
     description = models.TextField(_('Description'), )
 
     def get_absolute_url(self):
-        return '/recipes/{}/'.format(self.id)
+        from django.urls import reverse
+        return reverse('recipes:detail', kwargs={'recipe_id': self.id})
 
     def __str__(self):
         return self.title
@@ -19,7 +19,7 @@ class Recipe(models.Model):
 
 
 class Ingredient(models.Model):
-    recipe = models.ForeignKey(Recipe, verbose_name=_("Recipe"))
+    recipe = models.ForeignKey(Recipe, verbose_name=_("Recipe"), on_delete=models.CASCADE)
     description = models.CharField(_('Description'), max_length=255)
 
     def __str__(self):
@@ -31,7 +31,7 @@ class Ingredient(models.Model):
 
 
 class Instruction(models.Model):
-    recipe = models.ForeignKey(Recipe, verbose_name=_("Recipe"))
+    recipe = models.ForeignKey(Recipe, verbose_name=_("Recipe"), on_delete=models.CASCADE)
     number = models.PositiveSmallIntegerField(_('Number'), help_text=_('Step number'))
     description = models.TextField(_('Description'), )
 

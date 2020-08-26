@@ -1,32 +1,31 @@
-# -*- coding: utf-8 -*-
-from django.shortcuts import render_to_response as render, redirect
-from django.template import RequestContext as ctx
 from django.forms.models import inlineformset_factory
+from django.http import Http404
+from django.shortcuts import render, redirect, get_object_or_404
+from django.utils.translation import gettext_lazy as _
 
 from .models import Recipe, Ingredient, Instruction
 from .forms import RecipeForm
 
 
 def recipes_list(request):
-    template_name = "recipes_list.html"
+    template_name = "recipes/recipes_list.html"
     recipes = Recipe.objects.all()
-
-    return render(template_name, locals(),
-        context_instance=ctx(request))
+    context = {'recipes': recipes,}
+    return render(request, template_name, context)
 
 
 def recipes_detail(request, recipe_id=None):
-    template_name = "recipes_detail.html"
-    if recipe_id:
+    template_name = "recipes/recipes_detail.html"
+    try:
         recipe = Recipe.objects.get(pk=recipe_id)
         context = {'recipe': recipe}
-
-    return render(template_name, locals(),
-        context_instance=ctx(request))
-
+    except Recipe.DoesNotExist:
+        raise Http404(_("Recipe does not exist"))
+    return render(request, template_name, context)
 
 
 def recipes_register_edition(request, recipe_id=None):
+    template_name = "recipes/register_edition.html"
     if recipe_id:
         recipe = Recipe.objects.get(pk=recipe_id)
     else:
@@ -44,12 +43,17 @@ def recipes_register_edition(request, recipe_id=None):
             form.save()
             ingredientFormset.save()
             instructionFormset.save()
-            #return redirect('recipes-list')
-            return redirect('/')
+            return redirect('recipes:list')
     else:
         form = RecipeForm(instance=recipe)
         ingredientFormset = IngredientFormSet(instance=recipe)
         instructionFormset = InstructionFormSet(instance=recipe)
 
-    return render('register_edition.html', locals(),
-        context_instance=ctx(request))
+    return render(request, template_name)
+
+
+def recipes_delete(request, recipe_id=None):
+    recipe = get_object_or_404(Recipe, id=recipe_id)
+    recipe.delete()
+    if recipe.delete():
+        return redirect('recipes:list')

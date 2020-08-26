@@ -1,0 +1,13 @@
+{% extends 'recipes/base.html' %}
+{% load static i18n %}
+
+{% block content %}
+<h1>{% trans 'Recipes' %}</h1>
+
+<p><u>{{ recipe.title }}:</u> {{ recipe.description }}.</p>
+<ul>
+	<li><a href="{% url 'recipes:edit' recipe.pk %}">{% trans 'Recipe edit' %}</a>.</li>
+	<li><a href="{% url 'recipes:delete' recipe.pk %}">{% trans 'Recipe delete' %}</a>.</li>
+</ul>
+<a href="{% url 'recipes:list' %}">{% trans 'Recipes list' %}</a>
+{% endblock content %}

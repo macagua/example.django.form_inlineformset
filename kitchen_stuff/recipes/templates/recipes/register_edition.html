@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'recipes/base.html' %}
 {% load static i18n %}
 
 {% block content %}
@@ -42,14 +42,13 @@
             {% endfor %}
         </ul>
 
-        <button id='btnInstruccion'>{% trans 'Add Instruction' %}</button>
+        <button id='btnInstruction'>{% trans 'Add Instruction' %}</button>
     </fieldset>
     <br>
     <button>{% trans 'Send' %}</button>
 </form>
 <br>
-<!-- <a href="{#% url 'recipes-list' %#}">{% trans 'Recipes list' %}</a> -->
-<a href="/">{% trans 'Recipes list' %}</a>
+<a href="{% url 'recipes:list' %}">{% trans 'Recipes list' %}</a>
 
 <script type='template/ingredient'>
     {{ ingredientFormset.empty_form.as_ul }}
@@ -63,9 +62,9 @@
 $(function(){
     // Replace all matches instead of just the first
     function replaceAll(text, search, replace){
-          while (text.toString().indexOf(search) != -1)
+        while (text.toString().indexOf(search) != -1)
             text = text.toString().replace(search, replace);
-          return text;
+        return text;
     }
 
     var $totalIngredients = $('#id_ingredient_set-TOTAL_FORMS');
@@ -81,7 +80,7 @@ $(function(){
 
     var $totalInstructions = $('#id_instruction_set-TOTAL_FORMS');
 
-    $('#btnInstruccion').click(function(event) {
+    $('#btnInstruction').click(function(event) {
         event.preventDefault();
         var total = parseInt($totalInstructions.val(), 10);
         var clon = $('script[type="template/instruction"]').html();
