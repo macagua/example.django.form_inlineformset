@@ -42,7 +42,7 @@
             {% endfor %}
         </ul>
 
-        <button id='btnInstruccion'>{% trans 'Add Instruction' %}</button>
+        <button id='btnInstruction'>{% trans 'Add Instruction' %}</button>
     </fieldset>
     <br>
     <button>{% trans 'Send' %}</button>
@@ -80,7 +80,7 @@ $(function(){
 
     var $totalInstructions = $('#id_instruction_set-TOTAL_FORMS');
 
-    $('#btnInstruccion').click(function(event) {
+    $('#btnInstruction').click(function(event) {
         event.preventDefault();
         var total = parseInt($totalInstructions.val(), 10);
         var clon = $('script[type="template/instruction"]').html();
