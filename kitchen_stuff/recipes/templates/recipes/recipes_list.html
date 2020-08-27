@@ -1,16 +1,25 @@
 {% extends 'recipes/base.html' %}
 {% load static i18n %}
 
-{% block content %}
-<h1>{% trans 'Recipes' %}</h1>
+    {% block content %}
 
-<ol>
-    {% for recipe in recipes %}
-        <li>
-            <a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a>
-        </li>
-    {% endfor %}
-</ol>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 
-<a href="{% url 'recipes:register' %}">{% trans 'Register recipe' %}</a>
-{% endblock content %}
+    <h1>{% trans 'Recipes' %}</h1>
+
+    <ol>
+        {% for recipe in recipes %}
+            <li>
+                <a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a>
+            </li>
+        {% endfor %}
+    </ol>
+
+    <a href="{% url 'recipes:register' %}">{% trans 'Register recipe' %}</a>
+    {% endblock content %}

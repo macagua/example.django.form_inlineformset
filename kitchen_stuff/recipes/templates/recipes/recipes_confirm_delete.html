@@ -1,0 +1,18 @@
+{% extends 'recipes/base.html' %}
+{% load static i18n %}
+
+    {% block title %}
+    <title>{% trans 'Delete Recipe' %}</title>
+    {% endblock %}
+
+    {% block content %}
+    <h1>{% blocktrans with recipe=recipe.title %}Delete {{ recipe }} recipe?{% endblocktrans %}</h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        {% trans 'Are you sure you want to delete this recipe?' %}
+        <input type="submit" value="{% trans 'Yes' %}"/>
+        <a href="{% url 'recipes:detail' recipe.pk %}">{% trans 'Cancel' %}</a>
+    </form>
+
+    {% endblock content %}
