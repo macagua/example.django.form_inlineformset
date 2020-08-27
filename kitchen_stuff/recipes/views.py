@@ -49,7 +49,13 @@ def recipes_register_edition(request, recipe_id=None):
         ingredientFormset = IngredientFormSet(instance=recipe)
         instructionFormset = InstructionFormSet(instance=recipe)
 
-    return render(request, template_name)
+    context = {
+        'form': form,
+        'ingredientFormset': ingredientFormset,
+        'instructionFormset': instructionFormset,
+    }
+
+    return render(request, template_name, context)
 
 
 def recipes_delete(request, recipe_id=None):
