@@ -37,7 +37,7 @@ def recipes_detail(request, recipe_id=None):
         # fetch the ingredients related to recipe id
         ingredients = recipe.ingredient_set.filter(recipe=recipe.id)
         # fetch the instructions related to recipe id
-        instructions = recipe.instruction_set.filter(recipe=recipe.id)
+        instructions = recipe.instruction_set.filter(recipe=recipe.id).order_by('number')
     except Recipe.DoesNotExist:
         raise Http404(_("Recipe does not exist"))
     context = {
