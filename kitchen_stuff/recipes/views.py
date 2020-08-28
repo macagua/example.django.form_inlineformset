@@ -34,9 +34,17 @@ def recipes_detail(request, recipe_id=None):
     try:
         # fetch the recipe related to passed id
         recipe = Recipe.objects.get(pk=recipe_id)
-        context = {'recipe': recipe}
+        # fetch the ingredients related to recipe id
+        ingredients = recipe.ingredient_set.filter(recipe=recipe.id)
+        # fetch the instructions related to recipe id
+        instructions = recipe.instruction_set.filter(recipe=recipe.id)
     except Recipe.DoesNotExist:
         raise Http404(_("Recipe does not exist"))
+    context = {
+        'recipe': recipe,
+        'ingredients': ingredients,
+        'instructions': instructions,
+    }
     return render(request, template_name, context)
 
 

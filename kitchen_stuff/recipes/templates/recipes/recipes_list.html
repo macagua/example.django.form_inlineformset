@@ -13,13 +13,19 @@
 
     <h1>{% trans 'Recipes' %}</h1>
 
-    <ol>
+    <ul>
         {% for recipe in recipes %}
             <li>
                 <a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a>
             </li>
         {% endfor %}
-    </ol>
+    </ul>
 
-    <a href="{% url 'recipes:register' %}">{% trans 'Register recipe' %}</a>
+    <hr>
+
+    <h2>Actions Menu</h2>
+
+    <ul>
+        <li><a href="{% url 'recipes:register' %}">{% trans 'Register recipe' %}</a>.</li>
+    </ul>
     {% endblock content %}

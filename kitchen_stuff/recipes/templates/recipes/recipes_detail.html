@@ -18,9 +18,30 @@
     <h1>{% trans 'Recipes' %}</h1>
 
     <p><u>{{ recipe.title }}:</u> {{ recipe.description }}</p>
+
+    <h2>Ingredients</h2>
+    <ul>
+        {% for ingredient in ingredients %}
+        <li>{{ ingredient.description }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Instructions</h2>
+
+    <ol>
+        {% for instruction in instructions %}
+        <li>{{ instruction.description }}</li>
+        {% endfor %}
+    </ol>
+
+    <hr>
+
+    <h2>Actions Menu</h2>
+
     <ul>
         <li><a href="{% url 'recipes:edit' recipe.pk %}">{% trans 'Recipe edit' %}</a>.</li>
         <li><a href="{% url 'recipes:delete' recipe.pk %}">{% trans 'Recipe delete' %}</a>.</li>
+        <li><a href="{% url 'recipes:list' %}">{% trans 'Recipes list' %}</a>.</li>
     </ul>
-    <a href="{% url 'recipes:list' %}">{% trans 'Recipes list' %}</a>
+
     {% endblock content %}

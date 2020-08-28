@@ -47,8 +47,15 @@
         <br>
         <button>{% trans 'Send' %}</button>
     </form>
+
     <br>
-    <a href="{% url 'recipes:list' %}">{% trans 'Recipes list' %}</a>
+    <hr>
+
+    <h2>Actions Menu</h2>
+
+    <ul>
+        <li><a href="{% url 'recipes:list' %}">{% trans 'Recipes list' %}</a>.</li>
+    </ul>
 
     <script type='template/ingredient'>
         {{ ingredientFormset.empty_form.as_ul }}
