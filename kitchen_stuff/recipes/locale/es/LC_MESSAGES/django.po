@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-27 22:06-0400\n"
-"PO-Revision-Date: 2020-08-27 22:07-0400\n"
+"POT-Creation-Date: 2020-08-27 22:26-0400\n"
+"PO-Revision-Date: 2020-08-27 22:26-0400\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: ES <LL@li.org>\n"
 "Language: es\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: apps.py:7 models.py:18 templates/recipes/recipes_detail.html:18
 #: templates/recipes/recipes_list.html:14
-#: templates/recipes/register_edition.html:15
+#: templates/recipes/register_edition.html:5
 msgid "Recipes"
 msgstr "Recetas"
 
@@ -39,7 +39,7 @@ msgstr "Receta"
 msgid "Ingredient"
 msgstr "Ingrediente"
 
-#: models.py:30 templates/recipes/register_edition.html:35
+#: models.py:30 templates/recipes/register_edition.html:25
 msgid "Ingredients"
 msgstr "Ingredientes"
 
@@ -60,7 +60,7 @@ msgstr "Paso {number}: {description}"
 msgid "Instruction"
 msgstr "Instrucción"
 
-#: models.py:46 templates/recipes/register_edition.html:47
+#: models.py:46 templates/recipes/register_edition.html:37
 msgid "Instructions"
 msgstr "Instrucciones"
 
@@ -86,6 +86,7 @@ msgid "Yes"
 msgstr "Sí"
 
 #: templates/recipes/recipes_confirm_delete.html:15
+#: templates/recipes/register_edition.html:48
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -95,7 +96,7 @@ msgstr "Detalles de receta"
 
 #: templates/recipes/recipes_detail.html:39
 #: templates/recipes/recipes_list.html:26
-#: templates/recipes/register_edition.html:64
+#: templates/recipes/register_edition.html:54
 msgid "Actions Menu"
 msgstr "Menú de acciones"
 
@@ -108,31 +109,29 @@ msgid "Recipe delete"
 msgstr "Eliminar receta"
 
 #: templates/recipes/recipes_detail.html:44
-#: templates/recipes/register_edition.html:67
+#: templates/recipes/register_edition.html:57
 msgid "Recipes list"
 msgstr "Lista de recetas"
 
 #: templates/recipes/recipes_list.html:29
-#| msgid "Recipe edit"
 msgid "Recipe register"
 msgstr "Registrar receta"
 
-#: templates/recipes/register_edition.html:6
-#| msgid "Recipe edit"
-msgid "Recipe Edition"
-msgstr "Edición de receta"
-
-#: templates/recipes/register_edition.html:43
+#: templates/recipes/register_edition.html:33
 msgid "Add Ingredient"
 msgstr "Añadir ingrediente"
 
-#: templates/recipes/register_edition.html:55
+#: templates/recipes/register_edition.html:45
 msgid "Add Instruction"
 msgstr "Añadir instrucción"
 
-#: templates/recipes/register_edition.html:58
+#: templates/recipes/register_edition.html:48
 msgid "Send"
 msgstr "Enviar"
+
+#: templates/recipes/register_edition.html:48
+msgid "or"
+msgstr "o"
 
 #: views.py:42
 msgid "Recipe does not exist"
