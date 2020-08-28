@@ -36,12 +36,12 @@
 
     <hr>
 
-    <h2>Actions Menu</h2>
+    <h2>{% trans 'Actions Menu' %}</h2>
 
     <ul>
-        <li><a href="{% url 'recipes:edit' recipe.pk %}">{% trans 'Recipe edit' %}</a>.</li>
-        <li><a href="{% url 'recipes:delete' recipe.pk %}">{% trans 'Recipe delete' %}</a>.</li>
-        <li><a href="{% url 'recipes:list' %}">{% trans 'Recipes list' %}</a>.</li>
+        <li><a href="{% url 'recipes:edit' recipe.pk %}" title="{% trans 'Recipe edit' %}">{% trans 'Recipe edit' %}</a>.</li>
+        <li><a href="{% url 'recipes:delete' recipe.pk %}" title="{% trans 'Recipe delete' %}">{% trans 'Recipe delete' %}</a>.</li>
+        <li><a href="{% url 'recipes:list' %}" title="{% trans 'Recipes list' %}">{% trans 'Recipes list' %}</a>.</li>
     </ul>
 
     {% endblock content %}

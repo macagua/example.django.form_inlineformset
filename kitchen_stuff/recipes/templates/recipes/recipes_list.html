@@ -16,16 +16,16 @@
     <ul>
         {% for recipe in recipes %}
             <li>
-                <a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a>
+                <a href="{{ recipe.get_absolute_url }}" title="{{ recipe.title }}">{{ recipe.title }}</a>.
             </li>
         {% endfor %}
     </ul>
 
     <hr>
 
-    <h2>Actions Menu</h2>
+    <h2>{% trans 'Actions Menu' %}</h2>
 
     <ul>
-        <li><a href="{% url 'recipes:register' %}">{% trans 'Register recipe' %}</a>.</li>
+        <li><a href="{% url 'recipes:register' %}" title="{% trans 'Recipe register' %}">{% trans 'Recipe register' %}</a>.</li>
     </ul>
     {% endblock content %}
