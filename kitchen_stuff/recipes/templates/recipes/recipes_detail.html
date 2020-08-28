@@ -19,14 +19,14 @@
 
     <p><u>{{ recipe.title }}:</u> {{ recipe.description }}</p>
 
-    <h2>Ingredients</h2>
+    <h2>{% trans 'Ingredients' %}</h2>
     <ul>
         {% for ingredient in ingredients %}
         <li>{{ ingredient.description }}</li>
         {% endfor %}
     </ul>
 
-    <h2>Instructions</h2>
+    <h2>{% trans 'Instructions' %}</h2>
 
     <ol>
         {% for instruction in instructions %}
